@@ -79,7 +79,7 @@ export default function Home() {
           </div>
           
           <nav className="flex space-x-6 font-medium text-sm text-slate-300">
-            {['beranda', 'profil', 'data-wbp', 'layanan', 'kontak'].map((tab) => (
+            {['beranda', 'profil', 'data-wbp', 'Berita dan Galeri', 'kontak'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -103,20 +103,20 @@ export default function Home() {
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold">
-                  <ShieldCheck size={14} /> Wilayah Bebas dari Korupsi (WBK)
+                  <ShieldCheck size={14} />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
                   Pelayanan Pemasyarakatan Rutan Sibuhuan yang Humanis & Transparan
                 </h2>
                 <p className="text-slate-300 text-base leading-relaxed">
-                  Selamat datang di portal pelayanan publik Rumah Tahanan Negara Kelas IIB Sibuhuan, Kabupaten Padang Lawas. Seluruh layanan pendaftaran kunjungan, penitipan barang, dan pengurusan integrasi **GRATIS (Rp0)** tanpa pungutan liar.
+                  Selamat datang di portal pelayanan publik Rumah Tahanan Negara Kelas IIB Sibuhuan.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <button onClick={() => setActiveTab('layanan')} className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-md transition flex items-center gap-2">
                     Jadwal & Layanan Kunjungan <Calendar size={18} />
                   </button>
                   <button onClick={() => setActiveTab('profil')} className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium px-6 py-3 rounded-lg transition flex items-center gap-2">
-                    Profil Lembaga <Info size={18} />
+                    Profil <Info size={18} />
                   </button>
                 </div>
               </div>
@@ -346,7 +346,7 @@ export default function Home() {
               <div className="p-3 bg-purple-50 text-purple-900 rounded-xl shrink-0"><Clock size={24} /></div>
               <div>
                 <h3 className="font-bold text-slate-900">Jam Layanan</h3>
-                <p className="text-xs text-slate-600 mt-1">Senin - Sabtu: 09.00 - 16.00 WIB</p>
+                <p className="text-xs text-slate-600 mt-1">Senin - Sabtu: 08.00 - 15.00 WIB</p>
               </div>
             </div>
           </div>
