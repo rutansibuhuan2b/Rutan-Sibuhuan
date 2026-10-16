@@ -33,28 +33,28 @@ export default function Home() {
   const pejabatRutan = [
     {
       jabatan: "KEPALA RUMAH TAHANAN NEGARA",
-      nama: "Nama Kepala Rutan, S.H., M.H.",
+      nama: "SIMSON BANGUN, S.H.",
       nip: "19800101 200003 1 001",
       foto: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
       warnaBg: "from-blue-900 to-slate-900"
     },
     {
       jabatan: "KEPALA KESATUAN PENGAMANAN RUTAN",
-      nama: "Nama Ka. KPR, S.H.",
+      nama: "PESTA HALOMOAN MARPAUNG",
       nip: "19850202 200501 1 002",
       foto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
       warnaBg: "from-slate-900 to-blue-950"
     },
     {
       jabatan: "KEPALA SUBSEKSI PENGELOLAAN",
-      nama: "Nama Kasubsi Pengelolaan, S.H.",
+      nama: "ANDIKA PAHLEVI, S.H.",
       nip: "19870303 200701 1 003",
       foto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
       warnaBg: "from-blue-950 to-slate-900"
     },
     {
       jabatan: "KEPALA SUBSEKSI PELAYANAN TAHANAN",
-      nama: "Nama Kasubsi Yantah, S.H.",
+      nama: "RUDY TIMBUL HALOMOAN SINAGA, S.H.",
       nip: "19890404 200901 1 004",
       foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
       warnaBg: "from-slate-900 to-blue-900"
@@ -67,7 +67,7 @@ export default function Home() {
       <div className="bg-slate-900 text-slate-300 text-xs py-2 px-6 flex justify-between items-center border-b border-slate-800">
         <div className="flex items-center space-x-4">
           <span className="flex items-center gap-1"><Phone size={13} /> (0636) 421xxx</span>
-          <span className="flex items-center gap-1"><Mail size={13} /> rutansibuhuan@kemenkumham.go.id</span>
+          <span className="flex items-center gap-1"><Mail size={13} /> rutansibuhuan@kemenimipas.go.id</span>
         </div>
         <div className="font-medium text-amber-400 hidden sm:block">
           Kementerian Imigrasi dan Pemasyarakatan RI
@@ -108,8 +108,7 @@ export default function Home() {
       <section id="beranda" className="relative bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 text-white py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold">
-              <ShieldCheck size={14} /> Wilayah Bebas dari Korupsi (WBK)
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
               Pelayanan Pemasyarakatan Rutan Sibuhuan yang Humanis & Transparan
@@ -131,18 +130,18 @@ export default function Home() {
             <div className="flex items-center space-x-4 border-b border-white/10 pb-4">
               <img src={logoImipas} alt="Logo IMIPAS" className="w-16 h-16 object-contain" />
               <div>
-                <h3 className="font-bold text-lg text-amber-400">Kementerian Imigrasi & Pemasyarakatan</h3>
-                <p className="text-xs text-slate-300">Direktorat Jenderal Pemasyarakatan RI</p>
+                <h3 className="font-bold text-lg text-amber-400">Kementerian Imigrasi & Pemasyarakatan RI</h3>
+                <p className="text-xs text-slate-300">Direktorat Jenderal Pemasyarakatan</p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-slate-900/60 p-4 rounded-xl border border-white/5">
-                <div className="text-amber-400 font-extrabold text-2xl mb-1">150</div>
+                <div className="text-amber-400 font-extrabold text-2xl mb-1">80</div>
                 <div className="text-xs text-slate-300 font-medium">Kapasitas Hunian</div>
               </div>
               <div className="bg-slate-900/60 p-4 rounded-xl border border-white/5">
-                <div className="text-blue-400 font-extrabold text-2xl mb-1">120</div>
+                <div className="text-blue-400 font-extrabold text-2xl mb-1">164</div>
                 <div className="text-xs text-slate-300 font-medium">Penghuni Saat Ini</div>
               </div>
               <div className="bg-slate-900/60 p-4 rounded-xl border border-white/5">
@@ -318,20 +317,20 @@ export default function Home() {
                 <tbody className="divide-y divide-slate-200">
                   <tr>
                     <td className="p-4 font-semibold">Senin & Rabu</td>
-                    <td className="p-4">08.30 - 11.30 WIB</td>
-                    <td className="p-4">13.30 - 15.00 WIB</td>
+                    <td className="p-4">09.00 - 11.30 WIB</td>
+                    <td className="p-4">14.00 - 16.00 WIB</td>
                     <td className="p-4 text-blue-900 font-medium">Tahanan</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold">Selasa & Kamis</td>
-                    <td className="p-4">08.30 - 11.30 WIB</td>
-                    <td className="p-4">13.30 - 15.00 WIB</td>
+                    <td className="p-4">09.00 - 11.30 WIB</td>
+                    <td className="p-4">14.00 - 16.00 WIB</td>
                     <td className="p-4 text-emerald-700 font-medium">Narapidana</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold">Jumat & Sabtu</td>
-                    <td className="p-4">08.30 - 11.00 WIB</td>
-                    <td className="p-4">Titip Barang Saja</td>
+                    <td className="p-4">09.00 - 11.30 WIB</td>
+                    <td className="p-4">09.00- 11.30 WIB</td>
                     <td className="p-4 text-slate-600">Semua WBP</td>
                   </tr>
                 </tbody>
@@ -400,4 +399,47 @@ export default function Home() {
                   required
                   rows={4}
                   value={formData.isi_pengaduan}
-                  onChange={(e) => setFormData({ ...formData, isi_pengaduan: e
+                  onChange={(e) => setFormData({ ...formData, isi_pengaduan: e.target.value })}
+                  placeholder="Tuliskan keluhan atau laporan Anda secara detail..."
+                  className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm"
+                ></textarea>
+              </div>
+              <button type="submit" className="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 rounded-lg shadow transition flex items-center justify-center gap-2">
+                <Send size={16} /> Kirim Pengaduan
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+          <div className="space-y-3">
+            <div className="flex items-center space-x-3 text-white">
+              <img src={logoImipas} alt="Logo IMIPAS" className="w-10 h-10 object-contain" />
+              <span className="font-bold">RUTAN KELAS IIB SIBUHUAN</span>
+            </div>
+            <p className="text-xs leading-relaxed text-slate-400">
+              Jalan Hasanuddin No. 15, Sibuhuan, Kec. Barumun, Kabupaten Padang Lawas, Sumatera Utara.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4">Kontak Layanan</h4>
+            <div className="space-y-2 text-xs">
+              <p className="flex items-center gap-2"><MapPin size={14} /> Kab. Padang Lawas, Sumatera Utara</p>
+              <p className="flex items-center gap-2"><Phone size={14} /> (0636) 421xxx</p>
+              <p className="flex items-center gap-2"><Mail size={14} /> rutansibuhuan@kemenkumham.go.id</p>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-white font-semibold text-sm mb-4">Hak Cipta</h4>
+            <p className="text-xs text-slate-400">
+              © 2026 Rumah Tahanan Negara Kelas IIB Sibuhuan — Kementerian Imigrasi dan Pemasyarakatan RI.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
