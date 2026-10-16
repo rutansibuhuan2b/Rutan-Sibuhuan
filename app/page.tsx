@@ -20,6 +20,9 @@ export default function Home() {
   };
 
   const logoImipas = "https://lapas-geser.vercel.app/Logo_IMIPAS.png";
+  
+  // URL Foto Gedung Rutan Sibuhuan Asli
+  const fotoGedungRutan = "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200";
 
   const kepalaRutan = {
     jabatan: "KEPALA RUMAH TAHANAN NEGARA",
@@ -63,6 +66,13 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Teks Berjalan (Running Text / Marquee) */}
+      <div className="bg-amber-500 text-slate-950 font-bold text-xs py-2 px-4 overflow-hidden shadow-inner">
+        <div className="whitespace-nowrap inline-block animate-marquee">
+          Selamat Datang di Portal Resmi Pelayanan Publik Rumah Tahanan Negara Kelas IIB Sibuhuan — Seluruh Layanan Kunjungan, Titipan Barang, dan Pengurusan Integrasi (PB/CB/CMB) GRATIS / Rp0 Tanpa Pungutan Liar — Jam Layanan Kunjungan: Sesi Pagi 09.00 - 11.30 WIB & Sesi Siang 14.00 - 16.00 WIB —
+        </div>
+      </div>
+
       {/* Main Navbar */}
       <header className="bg-slate-950 text-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
@@ -79,7 +89,7 @@ export default function Home() {
           </div>
           
           <nav className="flex space-x-6 font-medium text-sm text-slate-300">
-            {['beranda', 'profil', 'data-wbp', 'Berita dan Galeri', 'kontak'].map((tab) => (
+            {['beranda', 'profil', 'data-wbp', 'layanan', 'kontak'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -96,32 +106,39 @@ export default function Home() {
         </div>
       </header>
 
-      {/* TAB BERANDA */}
+      {/* TAB BERANDA (HERO BANNER GEDUNG RUTAN SIBUHUAN) */}
       {activeTab === 'beranda' && (
         <>
-          <section className="relative bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 text-white py-20 px-6">
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <section className="relative min-h-[550px] flex items-center justify-center text-white py-20 px-6 bg-slate-950 overflow-hidden">
+            {/* Latar Belakang Foto Gedung Rutan Sibuhuan */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 scale-105 transition duration-1000"
+              style={{ backgroundImage: `url('https://i.ibb.co/L5GqLnp/1000717439.jpg')` }}
+            ></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+
+            <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center z-10">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold">
-                  <ShieldCheck size={14} />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-semibold backdrop-blur-md">
+                  <ShieldCheck size={14} /> Wilayah Bebas dari Korupsi (WBK)
                 </div>
-                <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+                <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-white drop-shadow-md">
                   Pelayanan Pemasyarakatan Rutan Sibuhuan yang Humanis & Transparan
                 </h2>
-                <p className="text-slate-300 text-base leading-relaxed">
-                  Selamat datang di portal pelayanan publik Rumah Tahanan Negara Kelas IIB Sibuhuan.
+                <p className="text-slate-200 text-base leading-relaxed drop-shadow">
+                  Selamat datang di portal pelayanan publik Rumah Tahanan Negara Kelas IIB Sibuhuan, Kabupaten Padang Lawas. Seluruh layanan pendaftaran kunjungan, penitipan barang, dan pengurusan integrasi **GRATIS (Rp0)** tanpa pungutan liar.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <button onClick={() => setActiveTab('layanan')} className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-md transition flex items-center gap-2">
                     Jadwal & Layanan Kunjungan <Calendar size={18} />
                   </button>
-                  <button onClick={() => setActiveTab('profil')} className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium px-6 py-3 rounded-lg transition flex items-center gap-2">
-                    Profil <Info size={18} />
+                  <button onClick={() => setActiveTab('profil')} className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium px-6 py-3 rounded-lg backdrop-blur-md transition flex items-center gap-2">
+                    Profil Lembaga <Info size={18} />
                   </button>
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl space-y-6 shadow-2xl">
+              <div className="bg-slate-900/80 backdrop-blur-md border border-white/10 p-8 rounded-2xl space-y-6 shadow-2xl">
                 <div className="flex items-center space-x-4 border-b border-white/10 pb-4">
                   <img src={logoImipas} alt="Logo IMIPAS" className="w-16 h-16 object-contain" />
                   <div>
@@ -131,19 +148,19 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-slate-900/60 p-4 rounded-xl border border-white/5 cursor-pointer" onClick={() => setActiveTab('data-wbp')}>
+                  <div className="bg-slate-950/70 p-4 rounded-xl border border-white/5 cursor-pointer" onClick={() => setActiveTab('data-wbp')}>
                     <div className="text-amber-400 font-extrabold text-2xl mb-1">80</div>
                     <div className="text-xs text-slate-300 font-medium">Kapasitas Hunian</div>
                   </div>
-                  <div className="bg-slate-900/60 p-4 rounded-xl border border-white/5 cursor-pointer" onClick={() => setActiveTab('data-wbp')}>
+                  <div className="bg-slate-950/70 p-4 rounded-xl border border-white/5 cursor-pointer" onClick={() => setActiveTab('data-wbp')}>
                     <div className="text-blue-400 font-extrabold text-2xl mb-1">164</div>
                     <div className="text-xs text-slate-300 font-medium">Penghuni Saat Ini</div>
                   </div>
-                  <div className="bg-slate-900/60 p-4 rounded-xl border border-white/5">
+                  <div className="bg-slate-950/70 p-4 rounded-xl border border-white/5">
                     <div className="text-emerald-400 font-extrabold text-2xl mb-1">100%</div>
                     <div className="text-xs text-slate-300 font-medium">Layanan Gratis / Rp0</div>
                   </div>
-                  <div className="bg-slate-900/60 p-4 rounded-xl border border-white/5">
+                  <div className="bg-slate-950/70 p-4 rounded-xl border border-white/5">
                     <div className="text-purple-400 font-extrabold text-2xl mb-1">24/7</div>
                     <div className="text-xs text-slate-300 font-medium">Pengaduan Online</div>
                   </div>
@@ -154,7 +171,7 @@ export default function Home() {
         </>
       )}
 
-      {/* TAB PROFIL (SUBMENU CARD GRID) */}
+      {/* TAB PROFIL */}
       {activeTab === 'profil' && (
         <section className="py-16 px-6 max-w-7xl mx-auto space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
@@ -162,7 +179,6 @@ export default function Home() {
             <div className="w-12 h-1 bg-amber-500 mx-auto rounded-full"></div>
           </div>
 
-          {/* Submenu Selection Cards */}
           <div className="grid md:grid-cols-3 gap-6">
             <div 
               onClick={() => setSubProfilTab('karutan')}
@@ -219,7 +235,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* DUKUNGAN SUBMENU KEPALA RUTAN */}
           {(subProfilTab === 'karutan' || subProfilTab === 'semua') && (
             <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm grid md:grid-cols-3 gap-8 items-center">
               <div className="relative rounded-xl overflow-hidden border-2 border-amber-400 shadow-lg">
@@ -239,7 +254,6 @@ export default function Home() {
             </div>
           )}
 
-          {/* DUKUNGAN SUBMENU PEJABAT STRUKTURAL BAWAHAN */}
           {(subProfilTab === 'pejabat' || subProfilTab === 'semua') && (
             <div className="space-y-6">
               <h3 className="text-xl font-bold text-slate-900">Pejabat Struktural Rutan Sibuhuan</h3>
@@ -260,7 +274,7 @@ export default function Home() {
         </section>
       )}
 
-      {/* TAB KEADAAN NARAPIDANA DAN TAHANAN (DATA WBP) */}
+      {/* TAB KEADAAN WBP */}
       {activeTab === 'data-wbp' && (
         <section className="py-16 px-6 max-w-7xl mx-auto space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
@@ -294,22 +308,10 @@ export default function Home() {
               <h3 className="text-3xl font-extrabold text-purple-900">80 Orang</h3>
             </div>
           </div>
-
-          {/* Persentase Okupansi */}
-          <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-            <div className="flex justify-between items-center text-sm font-bold">
-              <span>Tingkat Okupansi Hunian Rutan Sibuhuan</span>
-              <span className="text-amber-600">205% (Over Kapasitas)</span>
-            </div>
-            <div className="w-full bg-slate-100 h-4 rounded-full overflow-hidden">
-              <div className="bg-amber-500 h-full w-full rounded-full"></div>
-            </div>
-            <p className="text-xs text-slate-500">Data diperbarui secara berkala oleh Subseksi Pelayanan Tahanan Rutan Sibuhuan.</p>
-          </div>
         </section>
       )}
 
-      {/* TAB KONTAK & LOKASI (GAYA CARD GRID) */}
+      {/* TAB KONTAK */}
       {activeTab === 'kontak' && (
         <section className="py-16 px-6 max-w-7xl mx-auto space-y-12">
           <div className="text-center max-w-xl mx-auto space-y-2">
@@ -322,7 +324,7 @@ export default function Home() {
               <div className="p-3 bg-blue-50 text-blue-900 rounded-xl shrink-0"><MapPin size={24} /></div>
               <div>
                 <h3 className="font-bold text-slate-900">Alamat</h3>
-                <p className="text-xs text-slate-600 mt-1">Jalan Hasanuddin No. 15, Sibuhuan, Kec. Barumun, Kabupaten Padang Lawas, Sumatera Utara</p>
+                <p className="text-xs text-slate-600 mt-1">Jalan Sultan Hasanuddin No. 15, Sibuhuan, Kec. Barumun, Kabupaten Padang Lawas, Sumatera Utara</p>
               </div>
             </div>
 
@@ -333,25 +335,21 @@ export default function Home() {
                 <p className="text-xs text-slate-600 mt-1">(0636) 421xxx / 0812-3456-7890</p>
               </div>
             </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4">
-              <div className="p-3 bg-amber-50 text-amber-900 rounded-xl shrink-0"><Mail size={24} /></div>
-              <div>
-                <h3 className="font-bold text-slate-900">Email</h3>
-                <p className="text-xs text-slate-600 mt-1">rutansibuhuan@kemenimipas.go.id</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-start space-x-4">
-              <div className="p-3 bg-purple-50 text-purple-900 rounded-xl shrink-0"><Clock size={24} /></div>
-              <div>
-                <h3 className="font-bold text-slate-900">Jam Layanan</h3>
-                <p className="text-xs text-slate-600 mt-1">Senin - Sabtu: 08.00 - 15.00 WIB</p>
-              </div>
-            </div>
           </div>
         </section>
       )}
+
+      {/* CSS Khusus untuk Animasi Marquee / Teks Berjalan */}
+      <style jsx global>{`
+        @keyframes marquee {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+          display: inline-block;
+          animation: marquee 25s linear infinite;
+        }
+      `}</style>
 
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-12 px-6 border-t border-slate-800">
