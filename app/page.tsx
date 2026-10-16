@@ -22,7 +22,7 @@ export default function Home() {
   const logoImipas = "https://lapas-geser.vercel.app/Logo_IMIPAS.png";
   
   // Link Gambar Gedung Rutan Kelas IIB Sibuhuan
-  const fotoGedungRutan = "https://i.ibb.co/6P01K04/1000717439.jpg";
+  const fotoGedungRutan = "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200";
 
   const kepalaRutan = {
     jabatan: "KEPALA RUMAH TAHANAN NEGARA",
@@ -112,23 +112,18 @@ export default function Home() {
           <section className="relative min-h-[550px] flex items-center justify-center text-white py-20 px-6 bg-slate-950 overflow-hidden">
             {/* Latar Belakang Foto Gedung Rutan Sibuhuan */}
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 scale-100 transition duration-1000"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 scale-100 transition duration-1000"
               style={{ backgroundImage: `url('${fotoGedungRutan}')` }}
             ></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
 
-            <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center z-10">
+            <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center z-10 w-full">
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-semibold backdrop-blur-md">
                   <ShieldCheck size={14} /> Wilayah Bebas dari Korupsi (WBK)
                 </div>
-                <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-white drop-shadow-md">
-                  Pelayanan Pemasyarakatan Rutan Sibuhuan yang Humanis & Transparan
-                </h2>
-                <p className="text-slate-200 text-base leading-relaxed drop-shadow">
-                  Selamat datang di portal pelayanan publik Rumah Tahanan Negara Kelas IIB Sibuhuan, Kabupaten Padang Lawas. Seluruh layanan pendaftaran kunjungan, penitipan barang, dan pengurusan integrasi **GRATIS (Rp0)** tanpa pungutan liar.
-                </p>
-                <div className="flex flex-wrap gap-4 pt-2">
+                
+                <div className="flex flex-wrap gap-4 pt-4">
                   <button onClick={() => setActiveTab('layanan')} className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-md transition flex items-center gap-2">
                     Jadwal & Layanan Kunjungan <Calendar size={18} />
                   </button>
