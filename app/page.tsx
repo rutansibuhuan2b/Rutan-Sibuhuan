@@ -21,8 +21,8 @@ export default function Home() {
 
   const logoImipas = "https://lapas-geser.vercel.app/Logo_IMIPAS.png";
   
-  // URL Gambar Gedung Rutan Kelas IIB Sibuhuan
-  const fotoGedungRutan = "https://i.ibb.co/L5GqLnp/1000717439.jpg";
+  // Link Gambar Gedung Rutan Kelas IIB Sibuhuan
+  const fotoGedungRutan = "https://i.ibb.co/6P01K04/1000717439.jpg";
 
   const kepalaRutan = {
     jabatan: "KEPALA RUMAH TAHANAN NEGARA",
@@ -112,8 +112,8 @@ export default function Home() {
           <section className="relative min-h-[550px] flex items-center justify-center text-white py-20 px-6 bg-slate-950 overflow-hidden">
             {/* Latar Belakang Foto Gedung Rutan Sibuhuan */}
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45 scale-100 transition duration-1000"
-              style={{ backgroundImage: `url('${fotoGedungRutan}')` }}
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 scale-100 transition duration-1000"
+              style={{ backgroundImage: `url('${gedung-rutan.jpg}')` }}
             ></div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
 
