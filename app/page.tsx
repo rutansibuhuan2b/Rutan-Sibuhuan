@@ -113,7 +113,7 @@ export default function Home() {
             {/* Latar Belakang Foto Gedung Rutan Sibuhuan */}
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 scale-100 transition duration-1000"
-              style={{ backgroundImage: `url('${gedung-rutan.jpg}')` }}
+              style={{ backgroundImage: `url('${fotoGedungRutan}')` }}
             ></div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
 
