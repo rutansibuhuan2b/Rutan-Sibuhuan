@@ -1,13 +1,24 @@
-import React from 'react';
-import FormPengaduan from '@/components/FormPengaduan';
+'use client';
+
+import React, { useState } from 'react';
 import { 
   Building2, Users, Calendar, ShieldAlert, FileText, 
-  Phone, Mail, MapPin, ArrowRight, Clock, ShieldCheck
+  Phone, Mail, MapPin, ArrowRight, Clock, ShieldCheck, Send, CheckCircle2 
 } from 'lucide-react';
 
 export default function Home() {
+  const [formData, setFormData] = useState({ nama: '', no_hp: '', isi_pengaduan: '' });
+  const [sukses, setSukses] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSukses(true);
+    setFormData({ nama: '', no_hp: '', isi_pengaduan: '' });
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
+      {/* Top Bar */}
       <div className="bg-slate-900 text-slate-300 text-xs py-2 px-6 flex justify-between items-center border-b border-slate-800">
         <div className="flex items-center space-x-4">
           <span className="flex items-center gap-1"><Phone size={13} /> (0636) 421xxx</span>
@@ -18,6 +29,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
@@ -43,6 +55,7 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Hero */}
       <section id="beranda" className="relative bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
@@ -83,6 +96,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Jadwal & Form Pengaduan */}
       <section id="jadwal" className="bg-slate-100 py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
           <div>
@@ -116,12 +130,61 @@ export default function Home() {
               </table>
             </div>
           </div>
-          <div>
-            <FormPengaduan />
+
+          <div id="pengaduan" className="bg-white p-8 rounded-2xl border border-slate-200 shadow-md">
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">Form Pengaduan Online</h3>
+            <p className="text-sm text-slate-600 mb-6">Sampaikan laporan atau keluhan Anda mengenai pelayanan Rutan Sibuhuan.</p>
+
+            {sukses && (
+              <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl flex items-center gap-3">
+                <CheckCircle2 className="text-emerald-600 shrink-0" />
+                <span className="text-sm font-medium">Laporan berhasil terkirim. Terima kasih atas masukan Anda.</span>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Lengkap</label>
+                <input
+                  type="text"
+                  required
+                  value={formData.nama}
+                  onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
+                  placeholder="Masukkan nama sesuai KTP"
+                  className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Nomor WhatsApp</label>
+                <input
+                  type="tel"
+                  required
+                  value={formData.no_hp}
+                  onChange={(e) => setFormData({ ...formData, no_hp: e.target.value })}
+                  placeholder="0812xxxxxxx"
+                  className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Isi Laporan</label>
+                <textarea
+                  required
+                  rows={4}
+                  value={formData.isi_pengaduan}
+                  onChange={(e) => setFormData({ ...formData, isi_pengaduan: e.target.value })}
+                  placeholder="Tuliskan keluhan atau laporan Anda..."
+                  className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm"
+                ></textarea>
+              </div>
+              <button type="submit" className="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 rounded-lg shadow transition flex items-center justify-center gap-2">
+                <Send size={16} /> Kirim Pengaduan
+              </button>
+            </form>
           </div>
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-xs text-slate-400">
