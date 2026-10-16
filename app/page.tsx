@@ -21,8 +21,8 @@ export default function Home() {
 
   const logoImipas = "https://lapas-geser.vercel.app/Logo_IMIPAS.png";
   
-  // URL Foto Gedung Rutan Sibuhuan Asli
-  const fotoGedungRutan = "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200";
+  // URL Gambar Gedung Rutan Kelas IIB Sibuhuan
+  const fotoGedungRutan = "https://i.ibb.co/L5GqLnp/1000717439.jpg";
 
   const kepalaRutan = {
     jabatan: "KEPALA RUMAH TAHANAN NEGARA",
@@ -69,7 +69,7 @@ export default function Home() {
       {/* Teks Berjalan (Running Text / Marquee) */}
       <div className="bg-amber-500 text-slate-950 font-bold text-xs py-2 px-4 overflow-hidden shadow-inner">
         <div className="whitespace-nowrap inline-block animate-marquee">
-          Selamat Datang di Portal Resmi Pelayanan Publik Rumah Tahanan Negara Kelas IIB Sibuhuan — Seluruh Layanan Kunjungan, Titipan Barang, dan Pengurusan Integrasi (PB/CB/CMB) GRATIS / Rp0.-
+          Selamat Datang di Portal Resmi Pelayanan Publik Rumah Tahanan Negara Kelas IIB Sibuhuan — Seluruh Layanan Kunjungan, Titipan Barang, dan Pengurusan Integrasi (PB/CB/CMB) GRATIS / Rp0.- Tanpa Pungutan Liar — Jam Layanan Kunjungan: Sesi Pagi 09.00 - 11.30 WIB & Sesi Siang 14.00 - 16.00 WIB —
         </div>
       </div>
 
@@ -112,25 +112,28 @@ export default function Home() {
           <section className="relative min-h-[550px] flex items-center justify-center text-white py-20 px-6 bg-slate-950 overflow-hidden">
             {/* Latar Belakang Foto Gedung Rutan Sibuhuan */}
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 scale-105 transition duration-1000"
-              style={{ backgroundImage: `url('https://i.ibb.co/L5GqLnp/1000717439.jpg')` }}
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45 scale-100 transition duration-1000"
+              style={{ backgroundImage: `url('${fotoGedungRutan}')` }}
             ></div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
 
             <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center z-10">
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-semibold backdrop-blur-md">
+                  <ShieldCheck size={14} /> Wilayah Bebas dari Korupsi (WBK)
                 </div>
+                <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-white drop-shadow-md">
+                  Pelayanan Pemasyarakatan Rutan Sibuhuan yang Humanis & Transparan
                 </h2>
                 <p className="text-slate-200 text-base leading-relaxed drop-shadow">
-                  Selamat datang di portal pelayanan publik Rumah Tahanan Negara Kelas IIB Sibuhuan
+                  Selamat datang di portal pelayanan publik Rumah Tahanan Negara Kelas IIB Sibuhuan, Kabupaten Padang Lawas. Seluruh layanan pendaftaran kunjungan, penitipan barang, dan pengurusan integrasi **GRATIS (Rp0)** tanpa pungutan liar.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <button onClick={() => setActiveTab('layanan')} className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-md transition flex items-center gap-2">
                     Jadwal & Layanan Kunjungan <Calendar size={18} />
                   </button>
                   <button onClick={() => setActiveTab('profil')} className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium px-6 py-3 rounded-lg backdrop-blur-md transition flex items-center gap-2">
-                    Profil<Info size={18} />
+                    Profil <Info size={18} />
                   </button>
                 </div>
               </div>
@@ -308,6 +311,89 @@ export default function Home() {
         </section>
       )}
 
+      {/* TAB LAYANAN */}
+      {activeTab === 'layanan' && (
+        <section className="py-16 px-6 max-w-7xl mx-auto space-y-12">
+          <div className="text-center max-w-xl mx-auto space-y-2">
+            <h2 className="text-3xl font-extrabold text-slate-900">Jadwal & Layanan Kunjungan</h2>
+            <div className="w-12 h-1 bg-amber-500 mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-slate-900 text-white">
+                  <tr>
+                    <th className="p-4">Hari</th>
+                    <th className="p-4">Sesi Pagi</th>
+                    <th className="p-4">Sesi Siang</th>
+                    <th className="p-4">Kategori WBP</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  <tr>
+                    <td className="p-4 font-semibold">Senin & Rabu</td>
+                    <td className="p-4">09.00 - 11.30 WIB</td>
+                    <td className="p-4">14.00 - 16.00 WIB</td>
+                    <td className="p-4 text-blue-900 font-medium">Tahanan</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-semibold">Selasa & Kamis</td>
+                    <td className="p-4">09.00 - 11.30 WIB</td>
+                    <td className="p-4">14.00 - 16.00 WIB</td>
+                    <td className="p-4 text-emerald-700 font-medium">Narapidana</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-semibold">Jumat & Sabtu</td>
+                    <td className="p-4">09.00 - 11.30 WIB</td>
+                    <td className="p-4">09.00 - 11.30 WIB</td>
+                    <td className="p-4 text-slate-600">Semua WBP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-md">
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Form Pengaduan Online</h3>
+              {sukses && (
+                <div className="mb-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-medium">
+                  Laporan berhasil terkirim. Terima kasih atas masukan Anda.
+                </div>
+              )}
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <input
+                  type="text"
+                  required
+                  value={formData.nama}
+                  onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
+                  placeholder="Nama Lengkap"
+                  className="w-full px-4 py-2 rounded-lg border border-slate-300 text-sm"
+                />
+                <input
+                  type="tel"
+                  required
+                  value={formData.no_hp}
+                  onChange={(e) => setFormData({ ...formData, no_hp: e.target.value })}
+                  placeholder="Nomor WhatsApp"
+                  className="w-full px-4 py-2 rounded-lg border border-slate-300 text-sm"
+                />
+                <textarea
+                  required
+                  rows={3}
+                  value={formData.isi_pengaduan}
+                  onChange={(e) => setFormData({ ...formData, isi_pengaduan: e.target.value })}
+                  placeholder="Isi Laporan Pengaduan..."
+                  className="w-full px-4 py-2 rounded-lg border border-slate-300 text-sm"
+                ></textarea>
+                <button type="submit" className="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-2.5 rounded-lg transition text-sm">
+                  Kirim Pengaduan
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* TAB KONTAK */}
       {activeTab === 'kontak' && (
         <section className="py-16 px-6 max-w-7xl mx-auto space-y-12">
@@ -336,7 +422,7 @@ export default function Home() {
         </section>
       )}
 
-      {/* CSS Khusus untuk Animasi Marquee / Teks Berjalan */}
+      {/* CSS Khusus Animasi Marquee / Teks Berjalan */}
       <style jsx global>{`
         @keyframes marquee {
           0% { transform: translateX(100%); }
