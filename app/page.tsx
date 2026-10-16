@@ -20,44 +20,34 @@ export default function Home() {
   // URL Logo Resmi Kementerian Imigrasi dan Pemasyarakatan
   const logoImipas = "https://lapas-geser.vercel.app/Logo_IMIPAS.png";
 
-  // =========================================================================
-  // BISA DIEDIT: DATA FOTO MAKLUMAT PELAYANAN
-  // Ganti URL gambar di bawah ini jika ingin mengubah foto Maklumat Pelayanan
-  // =========================================================================
+  // URL Foto Banner Maklumat Pelayanan
   const fotoMaklumat = "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200";
 
-  // =========================================================================
-  // BISA DIEDIT: DATA PEJABAT STRUKTURAL RUTAN KELAS IIB SIBUHUAN
-  // Ubah nama, NIP, dan fotoPejabat sesuai dengan data riil pejabat Rutan
-  // =========================================================================
+  // Data Pejabat Struktural Rutan Kelas IIB Sibuhuan
   const pejabatRutan = [
     {
       jabatan: "KEPALA RUMAH TAHANAN NEGARA",
       nama: "SIMSON BANGUN, S.H.",
       nip: "19800101 200003 1 001",
-      foto: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
-      warnaBg: "from-blue-900 to-slate-900"
+      foto: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"
     },
     {
       jabatan: "KEPALA KESATUAN PENGAMANAN RUTAN",
       nama: "PESTA HALOMOAN MARPAUNG",
       nip: "19850202 200501 1 002",
-      foto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
-      warnaBg: "from-slate-900 to-blue-950"
+      foto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
     },
     {
       jabatan: "KEPALA SUBSEKSI PENGELOLAAN",
       nama: "ANDIKA PAHLEVI, S.H.",
       nip: "19870303 200701 1 003",
-      foto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
-      warnaBg: "from-blue-950 to-slate-900"
+      foto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400"
     },
     {
       jabatan: "KEPALA SUBSEKSI PELAYANAN TAHANAN",
       nama: "RUDY TIMBUL HALOMOAN SINAGA, S.H.",
       nip: "19890404 200901 1 004",
-      foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
-      warnaBg: "from-slate-900 to-blue-900"
+      foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
     }
   ];
 
@@ -108,7 +98,8 @@ export default function Home() {
       <section id="beranda" className="relative bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 text-white py-20 px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold">
+              <ShieldCheck size={14} /> Wilayah Bebas dari Korupsi (WBK)
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
               Pelayanan Pemasyarakatan Rutan Sibuhuan yang Humanis & Transparan
@@ -207,9 +198,9 @@ export default function Home() {
             <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-2">
               <h4 className="font-bold text-amber-400 text-sm">Prinsip Pelayanan Kami:</h4>
               <ul className="text-xs text-slate-300 space-y-1">
-                <li>• **Transparan:** Kejelasan syarat, waktu, dan alur pelayanan.</li>
-                <li>• **Akuntabel:** Dapat dipertanggungjawabkan sesuai standar regulasi.</li>
-                <li>• **Bebas Pungli:** Seluruh layanan Rp0 tanpa biaya apapun.</li>
+                <li>• Transparan: Kejelasan syarat, waktu, dan alur pelayanan.</li>
+                <li>• Akuntabel: Dapat dipertanggungjawabkan sesuai standar regulasi.</li>
+                <li>• Bebas Pungli: Seluruh layanan Rp0 tanpa biaya apapun.</li>
               </ul>
             </div>
           </div>
@@ -237,7 +228,6 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Syarat Kunjungan */}
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 space-y-4">
             <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
               <div className="p-3 bg-blue-100 text-blue-900 rounded-xl"><Users size={24} /></div>
@@ -257,7 +247,7 @@ export default function Home() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle className="text-emerald-600 shrink-0 mt-0.5" size={18} />
-                <span>Surat Izin Kunjungan dari Pihak Penahan (Kejaksaan/Pengadilan) **khusus Tahanan**.</span>
+                <span>Surat Izin Kunjungan dari Pihak Penahan (Kejaksaan/Pengadilan) khusus Tahanan.</span>
               </li>
               <li className="flex items-start gap-2">
                 <XCircle className="text-red-500 shrink-0 mt-0.5" size={18} />
@@ -266,7 +256,6 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Alur Integrasi */}
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 space-y-4">
             <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
               <div className="p-3 bg-emerald-100 text-emerald-900 rounded-xl"><FileText size={24} /></div>
@@ -330,7 +319,7 @@ export default function Home() {
                   <tr>
                     <td className="p-4 font-semibold">Jumat & Sabtu</td>
                     <td className="p-4">09.00 - 11.30 WIB</td>
-                    <td className="p-4">09.00- 11.30 WIB</td>
+                    <td className="p-4">09.00 - 11.30 WIB</td>
                     <td className="p-4 text-slate-600">Semua WBP</td>
                   </tr>
                 </tbody>
@@ -429,7 +418,7 @@ export default function Home() {
             <div className="space-y-2 text-xs">
               <p className="flex items-center gap-2"><MapPin size={14} /> Kab. Padang Lawas, Sumatera Utara</p>
               <p className="flex items-center gap-2"><Phone size={14} /> (0636) 421xxx</p>
-              <p className="flex items-center gap-2"><Mail size={14} /> rutansibuhuan@kemenkumham.go.id</p>
+              <p className="flex items-center gap-2"><Mail size={14} /> rutansibuhuan@kemenimipas.go.id</p>
             </div>
           </div>
           <div>
