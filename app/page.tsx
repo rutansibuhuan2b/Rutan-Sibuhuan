@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { 
   Building2, Users, Calendar, ShieldAlert, FileText, 
   Phone, Mail, MapPin, ArrowRight, Clock, ShieldCheck, Send, CheckCircle2,
-  CheckCircle, XCircle, Info, HeartHandshake, Award
+  CheckCircle, XCircle, Info, HeartHandshake, Award, UserCheck
 } from 'lucide-react';
 
 export default function Home() {
@@ -17,8 +17,49 @@ export default function Home() {
     setFormData({ nama: '', no_hp: '', kategori: 'Pelayanan Kunjungan', isi_pengaduan: '' });
   };
 
-  // URL Logo Resmi Kementerian Imigrasi dan Pemasyarakatan RI
+  // URL Logo Resmi Kementerian Imigrasi dan Pemasyarakatan
   const logoImipas = "https://lapas-geser.vercel.app/Logo_IMIPAS.png";
+
+  // =========================================================================
+  // BISA DIEDIT: DATA FOTO MAKLUMAT PELAYANAN
+  // Ganti URL gambar di bawah ini jika ingin mengubah foto Maklumat Pelayanan
+  // =========================================================================
+  const fotoMaklumat = "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200";
+
+  // =========================================================================
+  // BISA DIEDIT: DATA PEJABAT STRUKTURAL RUTAN KELAS IIB SIBUHUAN
+  // Ubah nama, NIP, dan fotoPejabat sesuai dengan data riil pejabat Rutan
+  // =========================================================================
+  const pejabatRutan = [
+    {
+      jabatan: "KEPALA RUMAH TAHANAN NEGARA",
+      nama: "Nama Kepala Rutan, S.H., M.H.",
+      nip: "19800101 200003 1 001",
+      foto: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
+      warnaBg: "from-blue-900 to-slate-900"
+    },
+    {
+      jabatan: "KEPALA KESATUAN PENGAMANAN RUTAN",
+      nama: "Nama Ka. KPR, S.H.",
+      nip: "19850202 200501 1 002",
+      foto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
+      warnaBg: "from-slate-900 to-blue-950"
+    },
+    {
+      jabatan: "KEPALA SUBSEKSI PENGELOLAAN",
+      nama: "Nama Kasubsi Pengelolaan, S.H.",
+      nip: "19870303 200701 1 003",
+      foto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+      warnaBg: "from-blue-950 to-slate-900"
+    },
+    {
+      jabatan: "KEPALA SUBSEKSI PELAYANAN TAHANAN",
+      nama: "Nama Kasubsi Yantah, S.H.",
+      nip: "19890404 200901 1 004",
+      foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+      warnaBg: "from-slate-900 to-blue-900"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
@@ -33,11 +74,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Main Navbar & Logo Resmi */}
+      {/* Main Navbar */}
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            {/* Logo Resmi Kementerian Imigrasi dan Pemasyarakatan */}
             <img 
               src={logoImipas} 
               alt="Logo Kementerian Imigrasi dan Pemasyarakatan" 
@@ -51,7 +91,8 @@ export default function Home() {
           
           <nav className="hidden lg:flex space-x-8 font-medium text-sm text-slate-600">
             <a href="#beranda" className="hover:text-blue-900 transition">Beranda</a>
-            <a href="#profil" className="hover:text-blue-900 transition">Profil</a>
+            <a href="#pejabat" className="hover:text-blue-900 transition">Pejabat</a>
+            <a href="#maklumat" className="hover:text-blue-900 transition">Maklumat</a>
             <a href="#layanan" className="hover:text-blue-900 transition">Layanan & Syarat</a>
             <a href="#jadwal" className="hover:text-blue-900 transition">Jadwal Kunjungan</a>
             <a href="#pengaduan" className="hover:text-blue-900 transition">Pengaduan</a>
@@ -86,7 +127,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Quick Stats Box & Logo Resmi */}
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl space-y-6 shadow-2xl">
             <div className="flex items-center space-x-4 border-b border-white/10 pb-4">
               <img src={logoImipas} alt="Logo IMIPAS" className="w-16 h-16 object-contain" />
@@ -118,39 +158,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Profil Section */}
-      <section id="profil" className="py-16 px-6 max-w-7xl mx-auto border-b border-slate-200">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
-          <div className="md:col-span-1 bg-gradient-to-br from-blue-900 to-slate-900 text-white p-8 rounded-2xl shadow-lg">
-            <Award className="text-amber-400 mb-4" size={36} />
-            <h3 className="text-2xl font-bold mb-2">Maklumat Pelayanan</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              "Kami segenap jajaran petugas Rumah Tahanan Negara Kelas IIB Sibuhuan sanggup menyelenggarakan pelayanan sesuai standar pelayanan yang telah ditetapkan dan apabila tidak menepati janji, kami siap menerima sanksi sesuai peraturan perundang-undangan."
-            </p>
-          </div>
+      {/* Profil Pejabat Struktural Section */}
+      <section id="pejabat" className="py-20 px-6 max-w-7xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-xs font-bold text-blue-900 tracking-wider uppercase mb-2">Struktur Organisasi</h2>
+          <p className="text-3xl font-bold text-slate-900">Pejabat Struktural Rutan Kelas IIB Sibuhuan</p>
+        </div>
 
-          <div className="md:col-span-2 space-y-4">
-            <h2 className="text-xs font-bold text-blue-900 tracking-wider uppercase">Profil Singkat</h2>
-            <h3 className="text-3xl font-bold text-slate-900">Komitmen Pelayanan PASTI & BerDOK</h3>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              Rumah Tahanan Negara Kelas IIB Sibuhuan merupakan Unit Pelaksana Teknis Pemasyarakatan di bawah Kementerian Imigrasi dan Pemasyarakatan RI yang berada di Kabupaten Padang Lawas, Sumatera Utara. Rutan Sibuhuan berfokus pada pembinaan kepribadian, kemandirian warga binaan, serta pemberian layanan integrasi dan kunjungan yang ramah, profesional, dan akuntabel.
-            </p>
-            <div className="grid grid-cols-2 gap-4 pt-2">
-              <div className="p-4 bg-blue-50 rounded-xl border border-blue-100 flex items-start gap-3">
-                <HeartHandshake className="text-blue-900 shrink-0" size={20} />
-                <div>
-                  <h4 className="font-bold text-sm text-slate-900">Humanis</h4>
-                  <p className="text-xs text-slate-600">Menjunjung tinggi hak asasi warga binaan & pengunjung.</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {pejabatRutan.map((pejabat, idx) => (
+            <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 hover:shadow-xl transition group">
+              <div className="relative h-64 overflow-hidden bg-slate-900">
+                <img 
+                  src={pejabat.foto} 
+                  alt={pejabat.nama} 
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-90"></div>
+                <div className="absolute bottom-3 left-4 right-4">
+                  <span className="inline-block px-2.5 py-1 bg-amber-400/90 text-slate-950 text-[10px] font-extrabold rounded-md uppercase tracking-wider mb-1">
+                    {pejabat.jabatan}
+                  </span>
                 </div>
               </div>
-              <div className="p-4 bg-amber-50 rounded-xl border border-amber-100 flex items-start gap-3">
-                <ShieldCheck className="text-amber-700 shrink-0" size={20} />
-                <div>
-                  <h4 className="font-bold text-sm text-slate-900">Bebas Pungli</h4>
-                  <p className="text-xs text-slate-600">Seluruh alur pelayanan tanpa dipungut biaya apapun.</p>
-                </div>
+              <div className="p-5 space-y-2">
+                <h3 className="font-bold text-base text-slate-900 leading-snug">{pejabat.nama}</h3>
+                <p className="text-xs text-slate-500 font-medium flex items-center gap-1">
+                  <UserCheck size={14} className="text-blue-900 shrink-0" /> NIP. {pejabat.nip}
+                </p>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Maklumat Pelayanan Berbasis Foto Section */}
+      <section id="maklumat" className="bg-slate-900 text-white py-20 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold">
+              <Award size={14} /> Komitmen Standar Pelayanan
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold leading-tight">
+              Maklumat Pelayanan Rutan Kelas IIB Sibuhuan
+            </h2>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              "Kami segenap jajaran petugas Rumah Tahanan Negara Kelas IIB Sibuhuan sanggup menyelenggarakan pelayanan sesuai standar pelayanan yang telah ditetapkan dan apabila tidak menepati janji, kami siap menerima sanksi sesuai peraturan perundang-undangan yang berlaku."
+            </p>
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10 space-y-2">
+              <h4 className="font-bold text-amber-400 text-sm">Prinsip Pelayanan Kami:</h4>
+              <ul className="text-xs text-slate-300 space-y-1">
+                <li>• **Transparan:** Kejelasan syarat, waktu, dan alur pelayanan.</li>
+                <li>• **Akuntabel:** Dapat dipertanggungjawabkan sesuai standar regulasi.</li>
+                <li>• **Bebas Pungli:** Seluruh layanan Rp0 tanpa biaya apapun.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <div className="relative rounded-2xl overflow-hidden border-2 border-amber-400/30 shadow-2xl group">
+              <img 
+                src={fotoMaklumat} 
+                alt="Banner Maklumat Pelayanan Rutan Sibuhuan" 
+                className="w-full h-auto object-cover hover:scale-105 transition duration-500"
+              />
+            </div>
+            <p className="text-center text-xs text-slate-400 italic">
+              Dokumentasi Resmi Banner Maklumat Pelayanan Rutan Kelas IIB Sibuhuan
+            </p>
           </div>
         </div>
       </section>
@@ -325,47 +400,4 @@ export default function Home() {
                   required
                   rows={4}
                   value={formData.isi_pengaduan}
-                  onChange={(e) => setFormData({ ...formData, isi_pengaduan: e.target.value })}
-                  placeholder="Tuliskan keluhan atau laporan Anda secara detail..."
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm"
-                ></textarea>
-              </div>
-              <button type="submit" className="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 rounded-lg shadow transition flex items-center justify-center gap-2">
-                <Send size={16} /> Kirim Pengaduan
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-          <div className="space-y-3">
-            <div className="flex items-center space-x-3 text-white">
-              <img src={logoImipas} alt="Logo IMIPAS" className="w-10 h-10 object-contain" />
-              <span className="font-bold">RUTAN KELAS IIB SIBUHUAN</span>
-            </div>
-            <p className="text-xs leading-relaxed text-slate-400">
-              Jalan Ki Hajar Dewantara, Sibuhuan, Kec. Barumun, Kabupaten Padang Lawas, Sumatera Utara.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Kontak Layanan</h4>
-            <div className="space-y-2 text-xs">
-              <p className="flex items-center gap-2"><MapPin size={14} /> Kab. Padang Lawas, Sumatera Utara</p>
-              <p className="flex items-center gap-2"><Phone size={14} /> (0636) 421xxx</p>
-              <p className="flex items-center gap-2"><Mail size={14} /> rutansibuhuan@kemenkumham.go.id</p>
-            </div>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold text-sm mb-4">Hak Cipta</h4>
-            <p className="text-xs text-slate-400">
-              © 2026 Rumah Tahanan Negara Kelas IIB Sibuhuan — Kementerian Imigrasi dan Pemasyarakatan RI.
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
+                  onChange={(e) => setFormData({ ...formData, isi_pengaduan: e
